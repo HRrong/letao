@@ -31,6 +31,11 @@ ul {
   width: 180px;
   height: 100%;
   background: #222d32;
+  transition: all 1s;
+}
+
+.lt_aside.now {
+  margin-left: -180px;
 }
 
 .lt_aside .brand a{
@@ -88,6 +93,11 @@ ul {
 .lt_main {
   height: 100%;
   margin-left: 180px;
+  transition: all 1s;
+}
+
+.lt_main.now {
+  margin-left: 0;
 }
 
 .lt_header {
