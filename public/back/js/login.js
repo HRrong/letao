@@ -65,7 +65,6 @@ $(function(){
       data:$('form').serialize(),
       dataType:'json',
       success:function(info){
-        console.log(info);
         
         if(info.error === 1000) {
            //把username这个字段改成校验失败,INVALID校验失败的图标
@@ -87,9 +86,7 @@ $(function(){
 
   // 3.重置表单
   $("[type='reset']").on("click", function () {
-    
         $("form").data("bootstrapValidator").resetForm(true);
-    
       });
 
 });
