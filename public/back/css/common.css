@@ -122,7 +122,21 @@ ul {
   margin: 0 20px;
 }
 
-.lt_conter>* {
+#charts1,
+#charts2 {
   width: 45%;
   height: 400px;
+}
+
+.lt_conter table {
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.lt_conter table th ,
+.table.table-bordered  td
+{
+  text-align: center;
+  vertical-align: middle;
 }
