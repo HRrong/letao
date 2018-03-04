@@ -114,6 +114,15 @@ ul {
   color: #fff;
 }
 
-/* .breadcrumb > .active {
-  color: #ccc;
-} */
+.breadcrumb {
+  margin-bottom: 20px;
+}
+
+.lt_conter {
+  margin: 0 20px;
+}
+
+.lt_conter>* {
+  width: 45%;
+  height: 400px;
+}
