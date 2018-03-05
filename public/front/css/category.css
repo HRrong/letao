@@ -40,3 +40,10 @@
     height: 62px;
     width: 62px;
 }
+
+.tips {
+    padding: 10px;
+    font-size: 12px;
+    color: #000;
+
+}

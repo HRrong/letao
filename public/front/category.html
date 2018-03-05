@@ -28,7 +28,7 @@
               <div class="mui-scroll">
                 <!--这里放置真实显示的DOM内容-->
                 <ul class="top">
-                  <li class="now"><a href="">公馆</a></li>
+
                 </ul>
               </div>
             </div>
@@ -40,12 +40,7 @@
               <div class="mui-scroll">
                 <!--这里放置真实显示的DOM内容-->
                   <ul class="mui-clearfix second">
-                    <li>
-                      <a href="">
-                        <img src="images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
+                    
                   </ul>
               </div>
             </div>
@@ -82,6 +77,30 @@
       </ul>
     </div>
   </div>
+
+  <!-- 侧边栏 模板渲染 -->
+  <script type="text/html" id='navTpl'>
+    {{ each rows v i }}
+    <li  data-id="{{ v.id }}" class="{{ i==0 ? 'now' : ''}}"><a href="javascript:;">{{ v.categoryName }}</a></li>
+    {{ /each }}
+  </script>
+
+  <!-- 二级分类模板 -->
+  <script type="text/html" id='secondTpl'>
+    {{ if rows.length === 0}}
+    <p class='tips'>该分类下没有更多数据</p>
+    {{ /if }}
+
+    {{ each rows v i}}
+    <li data-id="{{ v.categoryId }}">
+      <a href="javascript:;">
+        <img src="{{ v.brandLogo }}" alt="">
+        <p>{{ v.brandName }}</p>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
+
 
   <script src="lib/mui/js/mui.min.js"></script>
   <script src="lib/artTemplate/template-web.js"></script>
