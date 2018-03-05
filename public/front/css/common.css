@@ -33,6 +33,10 @@ ol {
     zoom: 1;
 }
 
+img {
+    display: inline-block;
+    width: 100%;
+}
 
 /* 大容器 */
 .lt_container {

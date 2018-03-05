@@ -1,0 +1,42 @@
+.nav {
+    height: 100%;
+    width: 90px;
+    position: relative;
+    float: left;
+}
+
+.lt_main .nav a {
+    display: block;
+    height: 50px;
+    width: 90px;
+    background: pink;
+    border-right: 1px solid #f00;
+    border-bottom: 1px solid #f00;
+    color: #007aff;
+    line-height: 50px;
+    text-align: center;
+}
+
+.nav li.now  a{
+    background-color: #fff;
+    border-right: none;
+}
+
+
+
+.lt_category {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.lt_category li {
+    width: 33.333%;
+    float: left;
+    text-align: center;
+}
+
+.lt_category li img {
+    height: 62px;
+    width: 62px;
+}
