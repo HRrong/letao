@@ -110,7 +110,12 @@
                 </div>
                 <!-- 上传图片 -->
                 <div class="form-group">
-                    
+                    <label for="fileupload" class="btn btn-default">上传图片</label>
+                    <input id="fileupload" type="file" name="pic1
+                    " data-url="/category/addSecondCategoryPic" style="display: none">
+                </div>
+                <div class="form-group">
+                    <img src="images/none.png" style="width:100px;heigth:100px">
                 </div>
             </div>
             <div class="modal-footer">
@@ -160,6 +165,8 @@
     <script src="lib/nprogress/nprogress.js"></script>
     <script src="lib/artTemplate/template-web.js"></script>
     <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+    <script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
     <script src="js/common.js"></script>
     <script src="js/login.js"></script>
     <script src="js/second.js"></script>
