@@ -72,22 +72,26 @@ ul {
 
 .lt_aside .nav li {
   width: 180px;
-  
   text-align: center;
-  margin-left: -15px;
+  /* margin-left: -15px; */
 }
+
 
 .nav li a {
   display: block;
   height: 40px;
   font-size: 14px;
   color: #fff;
+  line-height: 40px;
+  border: 3px solid transparent;
 }
 
-.nav .second a {
-  margin-left: 15px;
+.nav li a.now
+{
+  border-left-color: #069;
+  background-color: #1d1f21;
+  color: #fff;
 }
-
 
 /* 主体 */
 .lt_main {
@@ -139,4 +143,9 @@ ul {
 {
   text-align: center;
   vertical-align: middle;
+}
+
+.addBtn {
+  margin-bottom: 20px;
+  margin-left: 20px;
 }

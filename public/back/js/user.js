@@ -22,9 +22,23 @@ $(function(){
                 numberOfPages: 5, //设置控件显示的页码数
                 totalPages:Math.ceil(info.total / info.size),
                 onPageClicked:function(a,b,c,p){
-                //绑定clck事件
-                page = p;
-                render();
+                    //绑定clck事件
+                    page = p;
+                    render();
+                },
+                itemTexts:function(type, page, current){ //修改显示文字
+                    switch (type) {
+                    case "first":
+                        return "第一页";
+                    case "prev":
+                        return "上一页";
+                    case "next":
+                        return "下一页";
+                    case "last":
+                        return "最后一页";
+                    case "page":
+                        return page;
+                    }
                 }
             });
             }
