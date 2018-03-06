@@ -34,6 +34,7 @@ $(function(){
         $('.lt_aside').toggleClass('now');
         // margin-left 为0；添加动画
         $('.lt_main').toggleClass('now');
+        $('.lt_header').toggleClass('now');
     });
 
 

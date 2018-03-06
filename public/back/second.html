@@ -91,33 +91,42 @@
                 <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">添加分类</h4>
             </div>
-            <div class="modal-body">
-                <!-- 下拉框 -->
-                <div class="form-group">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            请选择一级分类
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                        </ul>
+            <form id='form'>
+                <div class="modal-body">
+                    <!-- 下拉框 -->
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                请选择一级分类
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">Action</a></li>
+                            </ul>
+                            <!-- 表单验证时需要用到 -->
+                            <input type="hidden" name="categoryId">
+                        </div>
+                    </div>
+                    <!-- 输入框 -->
+                    <div class="form-group">
+                        <input class="form-control categoryName" type="text" placeholder="请输入一级分类的名称">
+                    </div>
+                    <!-- 上传图片 -->
+                    <div class="form-group">
+                        <label for="fileupload" class="btn btn-default">上传图片</label>
+                        <!--type:file  只有这样才能选择图片-->
+                        <!--id: 方便获取这个input-->
+                        <!--name: 服务器通过这个name属性才能获取到对应图片-->
+                        <!--data-url: 服务器上传的地址-->
+                        <input type="file" style="display: none" id="fileupload" class="btn btn-default" name="pic1" data-url="/category/addSecondCategoryPic">
+                    </div>
+                    <div class="form-group img_box" >
+                        <img src="images/none.png" style="width:100px;heigth:100px">
+                        <input type="hidden" name="brandLogo">
+                        <input type="hidden" name="hot" value="1">
                     </div>
                 </div>
-                <!-- 输入框 -->
-                <div class="form-group">
-                    <input class="form-control categoryName" type="text" placeholder="请输入一级分类的名称">
-                </div>
-                <!-- 上传图片 -->
-                <div class="form-group">
-                    <label for="fileupload" class="btn btn-default">上传图片</label>
-                    <input id="fileupload" type="file" name="pic1
-                    " data-url="/category/addSecondCategoryPic" style="display: none">
-                </div>
-                <div class="form-group">
-                    <img src="images/none.png" style="width:100px;heigth:100px">
-                </div>
-            </div>
+            </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button type="button" class="btn btn-primary btn_add">添加</button>
@@ -150,13 +159,17 @@
     <script type="text/html" id='tpl'>
         {{ each rows v i }}
         <tr data-id="{{ v.id }}">
-            <td>{{ }}</td>
-            <td>{{ }}</td>
-            <td>{{ }}</td>
-            <td>{{ }}</td>
-            <td>{{ }}</td>
+            <td>{{ (page-1)*size+i+1}}</td>
+            <td>{{ v.categoryName }}</td>
+            <td>{{ v.brandName }}</td>
+            <td><img src="{{v.brandLogo?v.brandLogo:'images/none.png'}}" alt=""></td>
         </tr>
         {{ /each }}
+    </script>
+
+    <!-- 一级分类模板 -->
+    <script type="text/html" id='tpl2'>
+        <li><a href="#">Action</a></li>
     </script>
 
     <script src="lib/jquery/jquery.js"></script>

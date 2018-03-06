@@ -25,13 +25,14 @@ ul {
 
 /* 侧边栏 */
 .lt_aside {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 180px;
   height: 100%;
   background: #222d32;
   transition: all 1s;
+  z-index: 666;
 }
 
 .lt_aside.now {
@@ -98,6 +99,7 @@ ul {
   height: 100%;
   margin-left: 180px;
   transition: all 1s;
+  padding-top: 70px;
 }
 
 .lt_main.now {
@@ -105,13 +107,21 @@ ul {
 }
 
 .lt_header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 50px;
   background: #3c8dbc;
-  padding: 0 20px;
+  padding: 0  20px 0 200px;
   line-height: 50px;
   font-size: 16px;
   margin-bottom: 20px;
+  transition: 1s all;
+}
+
+.lt_header.now {
+  padding:0 20px;
 }
 
 .lt_header a {
