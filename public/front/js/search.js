@@ -95,7 +95,7 @@ $(function(){
         // render();
 
         //重新渲染, 需要跳转到searList页面
-        location.href = 'searchList.html?key='+value;
+        location.href = 'searchList.html?name=zs&key='+value;
 
     }); 
 
