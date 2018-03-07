@@ -19,6 +19,7 @@ $(function(){
             success:function(info){
                 if(info.success){
                     render();
+                    $('.categoryName').val(" ");
                 }
             }
         });

@@ -47,6 +47,9 @@ img {
     padding-top: 45px;
     padding-bottom: 55px;
     overflow: hidden;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
 }
 
 .lt_header {
@@ -120,4 +123,23 @@ img {
 
 .lt_footer li.now p {
     color: darkorange;
+}
+
+.lt_search {
+    padding: 10px;
+    position: relative;
+}
+
+.lt_search input {
+    border-color: #007aff;
+    padding-left: 15px;
+    font-size: 12px;
+    height: 34px;
+    border-radius: 5px;
+}
+
+.lt_search .search_btn {
+    position: absolute;
+    right: 10px;
+    top:10px;
 }
