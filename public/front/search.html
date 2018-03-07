@@ -26,16 +26,7 @@
           <button class="mui-btn mui-btn-blue search_btn">搜索</button>
       </div>
       <div class="lt_history">
-          <div class="title mui-clearfix">
-              <span class="mui-pull-left">搜索历史</span>
-              <span class="mui-pull-right fa fa-trash btn_empty ">清空记录</span>
-          </div>
-          <div class="list">
-              <ul>
-                  <li class="mui-clearfix"><a href="searchList.html?key=">1</a><span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span></li>
-                  <li class="mui-clearfix"><a href="searchList.html?key=">1</a><span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span></li>
-              </ul>
-          </div>
+          <!-- 模板渲染 -->
       </div>
     </div>
 
@@ -69,6 +60,24 @@
       </ul>
     </div>
   </div>
+
+  <script type="text/html" id='tpl'>
+    {{ if list.length === 0 }} 
+        <p>没有历史记录</p>
+    {{else}}
+    <div class="title mui-clearfix">
+        <span class="mui-pull-left">搜索历史</span>
+        <span class="mui-pull-right fa fa-trash btn_empty ">清空记录</span>
+    </div>
+    <div class="list">
+        <ul>
+            {{ each list v i }}
+            <li class="mui-clearfix "><a href="searchList.html?key=">{{ v }}</a><span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"  data-index='{{ i }}'></span></li> 
+            {{ /each }}
+        </ul>
+    </div>
+    {{ /if }}
+  </script>
 
 
   <script src="lib/mui/js/mui.min.js"></script>
