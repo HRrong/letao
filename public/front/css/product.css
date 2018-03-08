@@ -37,3 +37,8 @@
     background: #f9f9f9;
     z-index: 666;
 }
+
+.lt_size span.now {
+    background-color: #069;
+    color: #fff;
+}

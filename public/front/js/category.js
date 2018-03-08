@@ -4,8 +4,8 @@ $(function(){
         type:'GET',
         url:'/category/queryTopCategory',
         success:function (info) {
+          console.log(info);
           $('.top').html(template('navTpl',info));
-          console.log(info.rows[0].id);
 
           // 渲染二级分类
           randerSecond(info.rows[0].id);
