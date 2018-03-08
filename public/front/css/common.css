@@ -173,10 +173,18 @@ img {
     margin-right: 4%;
 }
 
-.lt_product .new_pric {
+.lt_product .new_pric,
+.price {
     color: #f00;
 }
 
-.lt_product .old_pric {
+.lt_product .old_pric,
+.oldPrice {
     text-decoration:line-through; 
+    color: #ccc;
+    font-size: 12px;
 }
+
+
+
+ 

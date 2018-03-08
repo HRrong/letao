@@ -2,10 +2,11 @@ $(function(){
     
     // 渲染一次页面
     function render(){
+        $('.lt_product').html('<div class="loading"></div>');
+
         // 存放需要请求的参数
-       var proName = $(".lt_search input").val();
         obj = {};
-        obj.proName = proName;
+        obj.proName = $(".lt_search input").val();
         obj.page = 1;
         obj.pageSize = 100;
 
@@ -25,15 +26,16 @@ $(function(){
             url:'/product/queryProduct',
             data:obj,
             success:function(info){
-                console.log(info);
-                $('.lt_product').html(template('tpl',info));
+                setTimeout(function(){
+                 $('.lt_product').html(template('tpl',info));
+                },1000);
             }
         });
     }
 
     // 1-地址栏中的参数填充到搜索框
     $('.lt_search input').val(getKey('key'));
-   var proName = $(".lt_search input").val();
+    var proName = $(".lt_search input").val();
     render();
 
     
@@ -77,13 +79,17 @@ $(function(){
     // 3-筛选价格
     $('.lt_sort li').on('click',function(){
         $this = $(this);
-        // 被点击到的li添加类吗
-        $(this).addClass('now').siblings().removeClass();
-        // 找到当前的li 切换类名
-        var spans = $this.find("span");
-        spans.toggleClass("fa-angle-down").toggleClass("fa-angle-up");
-
-        // 根据类名判断排序方式
+        // 判断是否有now类名
+        if($this.hasClass('now')){
+            // 切换上下箭头类名
+            $this.find("span").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+        }else {
+            // 当前点击的li 加上 now 类名
+            $this.addClass('now').siblings().removeClass();
+            // 其它箭头朝下
+            $(".lt_sort li span").removeClass('fa-angle-up').addClass('fa-angle-down');
+        }
+        
     
         render();
     });
