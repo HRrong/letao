@@ -31,7 +31,7 @@ $(function(){
         // 获取尺码 数量
         var size = $('.lt_size span.now').text();
         var num = $('.mui-numbox-input').val();
-        
+        console.log(location.href);
         // 如果没有选择尺码和数量，显示提示框
         if( !size) {
             mui.toast('请选择尺码');
@@ -54,9 +54,16 @@ $(function(){
             success:function(info){
                 // 需要判断用户是否登录
                 if(info.error == 400){
-                    location.href = 'login.html';
-                }else {
-                    location.href = 'cart.html';
+                    location.href = 'login.html?retUrl='+location.href;
+                }
+                
+                if(info.success){
+                    // 添加成功，弹出框
+                    mui.confirm('添加成功','温馨提示',["去购物车",'继续浏览'],function(e){
+                        if(e.index == 0) {
+                            location.href = "cart.html";
+                        }
+                    });
                 }
             }
         })

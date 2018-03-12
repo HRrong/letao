@@ -185,6 +185,13 @@ img {
     font-size: 12px;
 }
 
-
+.mui-input-row label ~ input, .mui-input-row label ~ select, .mui-input-row label ~ textarea {
+    float: right;
+    width: 65%;
+    margin-bottom: 0;
+    padding-left: 0;
+    border: 0;
+    line-height: 40px;
+}
 
  

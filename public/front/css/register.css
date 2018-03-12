@@ -1,0 +1,34 @@
+.myForm {
+    margin: 5px;
+}
+
+.myForm .vCode input{
+    width: 65%;
+    margin-right: 15px;
+}
+
+.myForm .vCode .btn_vcode {
+    width: 30%;
+}
+
+.lt_register {
+    padding: 0 5px;
+}
+
+.lt_register .btn_register {
+    width: 100%;
+}
+
+.tip {
+    padding: 5px;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.tip  span:nth-child(2) {
+    color:  #007aff;
+}
+
+.disabled {
+    background: #999;
+}

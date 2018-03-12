@@ -22,3 +22,4 @@ function getKey(key){
     // 通过传进的参数直接获取到地址栏中的值。
     return obj[key];
 }
+
